@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0d0b12">
+  <title>SELENE — La nuit, en rythme.</title>
+  <meta name="description" content="SELENE V1 Realease par AzuRT. Un skin osu! minimaliste en rose et violet : ronds contrastés, halo lumineux et interface cartoon. Aperçus, sons et téléchargement.">
+  <meta property="og:title" content="SELENE — La nuit, en rythme.">
+  <meta property="og:description" content="Rose. Violet. Juste assez de lumière. Découvre le skin osu! d’AzuRT et télécharge la V1.">
+  <meta property="og:image" content="https://guestop89.github.io/selene-osu-skin/assets/overview.jpg">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Aller au contenu</a>
+  <header class="header wrap">
+    <a class="brand" href="#" aria-label="SELENE, accueil"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M25 22A13 13 0 0 1 10 3a13 13 0 1 0 15 19Z"/></svg>SELENE<span>by AzuRT</span></a>
+    <nav aria-label="Navigation principale"><a href="#details">Le skin</a><a href="#motion">En mouvement</a><a href="#install">Installer <span>↗</span></a></nav>
+    <a class="github" href="https://github.com/guestop89/selene-osu-skin" aria-label="Voir le dépôt GitHub">GitHub <span>↗</span></a>
+  </header>
+  <main id="main">
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="status-dot"></span> SELENE V1 REALEASE <span class="pill">.OSK</span></div>
+        <h1 id="hero-title">La nuit,<br><em>en rythme.</em></h1>
+        <p class="lead">Un peu de rose. Un peu de violet.<br>Et juste assez de lumière pour suivre chaque note.</p>
+        <div class="hero-actions"><a class="button primary" href="downloads/SELENE-V1-Realease.osk" download>Télécharger la V1 <span>↘</span></a><a class="text-link" href="#details">Découvrir le skin <span>↓</span></a></div>
+        <p class="download-meta">Gratuit · Pack complet · osu!standard & mania</p>
+      </div>
+      <div class="hero-visual">
+        <div class="stage-top"><span><i></i> LE SKIN, DE PLUS PRÈS</span><span>01 / STANDARD</span></div>
+        <div class="playfield" id="playfield">
+          <div class="mini-hud health-hud"><img src="assets/scorebar-bg.png" alt="HUD relié : Sélène, AzuRT, drapeau français et avatar osu!"><canvas class="health-fill" width="640" height="28" aria-hidden="true"></canvas></div>
+          <div class="demo-accuracy" aria-label="Précision illustrative">99.42<span>%</span><small>PRÉCISION</small></div>
+          <svg class="connections" viewBox="0 0 600 460" preserveAspectRatio="none" aria-hidden="true"><path d="M140 285 255 140 412 205 450 350"/></svg>
+          <button class="hitobject note-one" data-color="0" aria-label="Jouer le clic du rond 1"><span class="approach"></span><canvas class="note-art" width="256" height="256"></canvas><img class="note-number" src="assets/default-1.png" alt="1"></button>
+          <button class="hitobject note-two" data-color="1" aria-label="Jouer le clic du rond 2"><span class="approach"></span><canvas class="note-art" width="256" height="256"></canvas><img class="note-number" src="assets/default-2.png" alt="2"></button>
+          <button class="hitobject note-three" data-color="2" aria-label="Jouer le clic du rond 3"><span class="approach"></span><canvas class="note-art" width="256" height="256"></canvas><img class="note-number" src="assets/default-3.png" alt="3"></button>
+          <div class="demo-slider" aria-hidden="true"><span></span><img src="assets/default-4.png" alt=""></div>
+          <div class="demo-combo"><canvas id="combo" width="500" height="100" aria-label="438 Combo, valeur illustrative"></canvas></div>
+          <div class="idle-light" aria-hidden="true"><img src="assets/cursortrail.png" alt=""><img src="assets/cursor.png" alt=""></div>
+          <canvas class="cursor-canvas" aria-hidden="true"></canvas>
+          <div class="stage-hint"><span class="mouse-symbol">↖</span> Touchez les ronds. Écoutez le clic.</div>
+        </div>
+        <div class="stage-bottom"><span>Vrais assets du pack.</span><span>Aperçu interactif, hors jeu.</span></div>
+      </div>
+      <div class="hero-bottom"><span>FAIT POUR GARDER LE TERRAIN CLAIR.</span><a href="#details" aria-label="Explorer la présentation">SCROLL TO EXPLORE <span>↓</span></a></div>
+    </section>
+
+    <section id="details" class="details wrap section">
+      <div class="section-heading"><p class="eyebrow">01 — LES REPÈRES</p><h2>Trois teintes.<br><em>Une seule direction.</em></h2><p>Des bords blancs francs, des centres légèrement transparents et des chiffres plus grands. L’esthétique garde sa place. La note garde la priorité.</p></div>
+      <div class="palette" aria-label="Les trois couleurs de combo du skin">
+        <figure><div class="large-note" data-color="0"><canvas class="note-art" width="256" height="256"></canvas><img src="assets/default-1.png" alt="Rond rose avec grand chiffre 1"></div><figcaption><span><i style="--swatch:#ff8bc5"></i>Rose</span><code>#FF8BC5</code></figcaption></figure>
+        <figure><div class="large-note" data-color="1"><canvas class="note-art" width="256" height="256"></canvas><img src="assets/default-2.png" alt="Rond lavande avec grand chiffre 2"></div><figcaption><span><i style="--swatch:#bf99ff"></i>Lavande</span><code>#BF99FF</code></figcaption></figure>
+        <figure><div class="large-note" data-color="2"><canvas class="note-art" width="256" height="256"></canvas><img src="assets/default-3.png" alt="Rond orchidée avec grand chiffre 3"></div><figcaption><span><i style="--swatch:#e79ef5"></i>Orchidée</span><code>#E79EF5</code></figcaption></figure>
+      </div>
+      <div class="detail-foot"><span>CONTRASTE NET</span><span>APPROCHES FINES</span><span>300 INVISIBLES</span><span>CHIFFRES ARRONDIS</span></div>
+    </section>
+
+    <section id="motion" class="motion section">
+      <div class="wrap motion-grid">
+        <div class="cursor-lab" id="cursor-lab" tabindex="0" role="img" aria-label="Zone d’essai du halo et de sa traînée, à explorer à la souris">
+          <span class="lab-label">HALO / 80 PX</span><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><span class="lab-star star-one">✦</span><span class="lab-star star-two">+</span><span class="lab-star star-three">✧</span>
+          <div class="idle-light" aria-hidden="true"><img src="assets/cursortrail.png" alt=""><img src="assets/cursor.png" alt=""></div><canvas class="cursor-canvas" aria-hidden="true"></canvas>
+          <p>Faites glisser la lumière.<small>Traînée de démonstration dans le navigateur.</small></p>
+        </div>
+        <div class="motion-copy"><p class="eyebrow">02 — LE MOUVEMENT</p><h2>Un halo.<br><em>Tout en légèreté.</em></h2><p>Un cœur blanc lumineux et une traînée courte. Le curseur garde sa taille au clic pour offrir un repère stable.</p><a class="text-link" href="downloads/SELENE-cursor-options.zip" download>Trois tailles au choix : 64 / 80 / 96 px <span>↘</span></a><p class="small-note">Le pack inclut déjà le curseur de 80 px. Les autres tailles sont facultatives.</p></div>
+      </div>
+    </section>
+
+    <section class="identity wrap section" aria-labelledby="identity-title">
+      <div class="section-heading"><p class="eyebrow">03 — L’IDENTITÉ</p><h2 id="identity-title">Tout se tient.<br><em>Tout respire.</em></h2><p>La vie rose/violet, le croissant Sélène, le drapeau et le profil AzuRT partagent la même coque. Un seul bloc, à sa place.</p></div>
+      <div class="hud-display"><span class="tiny-label">360 FRAMES · BOUCLE DOUCE DE 6 SECONDES</span><div class="health-hud"><img src="assets/scorebar-bg.png" alt="Barre de vie avec avatar osu!, AzuRT et drapeau français"><canvas class="health-fill" width="640" height="28" aria-hidden="true"></canvas></div><div class="hud-labels"><span>ROSE → VIOLET</span><span>AVATAR OSU! ORIGINAL</span><span>PROFIL RELIÉ</span></div></div>
+      <div class="animation-row"><div><p class="eyebrow">LES PETITS DÉTAILS</p><h3>Un rebond.<br>Un sourire. On continue.</h3><p>Combo blanc et violet, rebond natif à chaque incrément. Pour les 100 et les 50, un petit <b>:3</b> élastique apparaît puis s’efface.</p></div><figure><img src="assets/motion.gif" width="760" height="310" alt="Simulation animée de la barre de vie, du combo réel en blanc/violet et du :3 vert" loading="lazy"><figcaption>Simulation hors jeu à partir des assets. Les animations du client peuvent varier.</figcaption></figure></div>
+    </section>
+
+    <section class="sound section" aria-labelledby="sound-title"><div class="wrap sound-layout"><div><p class="eyebrow">04 — LE SON</p><h2 id="sound-title">Le petit clic<br><em>qui fait du bien.</em></h2><p>Court, net, sans longue réverbération.<br>Écoutez les trois familles de hitsounds.</p><div class="sound-controls" role="group" aria-label="Écouter les hitsounds"><button class="sound-button" data-sound="normal-hitnormal"><span>▶</span> Normal</button><button class="sound-button" data-sound="soft-hitnormal"><span>▶</span> Soft</button><button class="sound-button" data-sound="drum-hitnormal"><span>▶</span> Drum</button></div><label class="volume">Volume de préécoute <input id="volume" type="range" min="0" max="100" value="45"><output id="volume-value">45 %</output></label><p class="sound-status" id="sound-status" role="status" aria-live="polite">À vous de lancer le premier clic.</p></div><div class="wave-visual" aria-hidden="true"><div class="wave-bars" id="wave-bars"></div><span>ATTAQUE COURTE. SENSATION NETTE.</span><span class="wave-number">01<span>/03</span></span></div></div></section>
+
+    <section class="gallery-section wrap section" aria-labelledby="gallery-title"><div class="gallery-heading"><div><p class="eyebrow">LE PACK, EN ENTIER</p><h2 id="gallery-title">Le même fil.<br><em>Du menu au terrain.</em></h2></div><button class="text-link" id="open-overview">Agrandir l’aperçu <span>↗</span></button></div><button class="overview-button" id="overview-image" aria-label="Ouvrir l’aperçu complet du skin"><img src="assets/overview.jpg" width="1920" height="1460" alt="Vue d’ensemble SELENE V1 : ronds, HUD AzuRT, accuracy, combo et jugements" loading="lazy"></button><p class="small-note">Composition des éléments du skin, valeurs illustratives. Les interfaces de navigation diffèrent entre stable et lazer.</p></section>
+
+    <section id="install" class="install section"><div class="wrap"><p class="eyebrow">05 — À VOUS DE JOUER</p><div class="install-heading"><h2>La lune vous attend.</h2><a class="button dark" href="downloads/SELENE-V1-Realease.osk" download>Télécharger SELENE V1 <span>↘</span></a></div><div class="steps"><article><span>01</span><h3>Téléchargez.</h3><p>Un seul fichier .osk complet.<br>Aucune ancienne version requise.</p></article><article><span>02</span><h3>Importez.</h3><p>Glissez le fichier dans osu!,<br>ou ouvrez-le par double-clic.</p></article><article><span>03</span><h3>Jouez.</h3><p>Sélectionnez « SELENE V1 Realease »<br>dans les options de skin.</p></article></div><div class="install-links"><a href="GUIDE.md">Guide détaillé ↗</a><a href="sources/SELENE-V1-sources.zip" download>Sources modifiables ↘</a><a href="https://osu.ppy.sh/users/38408224">Le profil d’AzuRT ↗</a></div></div></section>
+
+    <section class="archive wrap"><div><p class="eyebrow">LÀ OÙ TOUT A COMMENCÉ</p><h3>Ribbon Edition.</h3><p>La première version. Nacre, rose poudré et lavande.<br>Gardée ici, pour le plaisir de revenir au début.</p></div><img src="assets/ribbon.jpg" alt="Aperçu de la première édition Ribbon, avec les pistes mania" loading="lazy"><a class="text-link" href="downloads/SELENE-Ribbon.osk" download>Télécharger l’originale <span>↘</span></a></section>
+    <section class="practical wrap"><details><summary>Compatibilité, réglages et limites <span>+</span></summary><div><p>Pack au format legacy, importable dans osu!stable et osu!lazer. Les assets de navigation ciblent surtout stable ; le HUD personnalisé, l’accuracy et le compteur de pp concernent lazer. Stable ne calcule pas les pp avec le skin seul.</p><p>Le jaune automatique tous les 100 combos n’est pas disponible dans le .osk. La position et l’orientation des jugements ne sont pas aléatoires dans cette V1. La taille du curseur, la sensibilité et les réglages mania restent à adapter à votre écran et à vos préférences.</p><p>Les archives, images et sons ont été contrôlés techniquement. Ce pack n’a pas encore fait l’objet d’un test d’import ou de gameplay en client. Les démonstrations du site utilisent les vrais assets ; elles ne constituent pas une capture du jeu ni une certification de performance.</p><a href="GUIDE.md">Tous les détails dans le guide ↗</a></div></details></section>
+  </main>
+  <footer class="footer wrap"><a class="brand" href="#">SELENE<span>La nuit, en rythme.</span></a><p>Personnalisé pour AzuRT.<br><span>Design original · Avatar du profil osu! fourni par AzuRT.</span></p><a href="https://github.com/guestop89/selene-osu-skin">Voir les sources sur GitHub ↗</a></footer>
+  <dialog id="overview-dialog" aria-labelledby="dialog-title"><div class="dialog-toolbar"><h2 id="dialog-title">SELENE V1 — aperçu complet</h2><button id="close-overview" aria-label="Fermer l’aperçu">Fermer ×</button></div><img src="assets/overview.jpg" alt="Composition complète du skin SELENE V1"></dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body></html>
