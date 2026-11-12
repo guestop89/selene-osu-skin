@@ -25,7 +25,7 @@ let healthFrames=[];
 fetch('assets/health.json').then(r=>{if(!r.ok)throw Error();return r.json()}).then(data=>Promise.all(data.map(src=>loadImage('data:image/png;base64,'+src)))).then(images=>{healthFrames=images;drawHealth(0)}).catch(()=>{});
 const healthCanvases=[...document.querySelectorAll('.health-fill')];
 let lastHealth=-1,healthRequest;
-function drawHealth(t){const index=reducedMotion.matches?0:Math.floor(t*.06)%360;if(healthFrames.length&&index!==lastHealth){lastHealth=index;healthCanvases.forEach(c=>c.getContext('2d').drawImage(healthFrames[index],0,0,640,28))}if(!reducedMotion.matches&&!document.hidden)healthRequest=requestAnimationFrame(drawHealth)}
+function drawHealth(t){const index=reducedMotion.matches?0:Math.floor(t*.06)%360;if(healthFrames.length&&index!==lastHealth){lastHealth=index;healthCanvases.forEach(c=>{const ctx=c.getContext('2d');ctx.clearRect(0,0,c.width,c.height);ctx.drawImage(healthFrames[index],0,0,540,18)})}if(!reducedMotion.matches&&!document.hidden)healthRequest=requestAnimationFrame(drawHealth)}
 document.addEventListener('visibilitychange',()=>{cancelAnimationFrame(healthRequest);if(!document.hidden)drawHealth(performance.now())});
 reducedMotion.addEventListener('change',()=>{cancelAnimationFrame(healthRequest);lastHealth=-1;drawHealth(performance.now())});
 
@@ -34,7 +34,7 @@ Promise.all([loadImage('assets/cursor.png'),loadImage('assets/cursortrail.png')]
   const canvas=container.querySelector('.cursor-canvas'),ctx=canvas.getContext('2d');let width=0,height=0,pointer=null,points=[],running=false,previousTime=0;
   function resize(){const bounds=container.getBoundingClientRect();width=bounds.width;height=bounds.height;const ratio=Math.min(2,window.devicePixelRatio||1);canvas.width=Math.round(width*ratio);canvas.height=Math.round(height*ratio);ctx.setTransform(ratio,0,0,ratio,0,0)}
   new ResizeObserver(resize).observe(container);resize();
-  function render(time){ctx.clearRect(0,0,width,height);points=points.filter(p=>time-p.time<160);if(pointer&&time-previousTime>=12){points.push({...pointer,time});previousTime=time}if(!reducedMotion.matches){for(const p of points){const life=1-(time-p.time)/160;ctx.globalAlpha=Math.max(0,life)*.35;ctx.drawImage(trail,p.x-15,p.y-15,30,30)}}ctx.globalAlpha=1;if(pointer){const size=container.id==='cursor-lab'?80:60;ctx.drawImage(cursor,pointer.x-size/2,pointer.y-size/2,size,size)}if(pointer||points.length){requestAnimationFrame(render)}else{running=false;container.classList.remove('pointer-active')}}
+  function render(time){ctx.clearRect(0,0,width,height);points=points.filter(p=>time-p.time<160);if(pointer&&time-previousTime>=12){points.push({...pointer,time});previousTime=time}if(!reducedMotion.matches){for(const p of points){const life=1-(time-p.time)/160;ctx.globalAlpha=Math.max(0,life)*.35;ctx.drawImage(trail,p.x-15,p.y-15,30,30)}}ctx.globalAlpha=1;if(pointer){const size=container.id==='cursor-lab'?88:66;ctx.drawImage(cursor,pointer.x-size/2,pointer.y-size/2,size,size)}if(pointer||points.length){requestAnimationFrame(render)}else{running=false;container.classList.remove('pointer-active')}}
   container.addEventListener('pointermove',event=>{if(event.pointerType==='touch')return;const bounds=container.getBoundingClientRect();pointer={x:event.clientX-bounds.left,y:event.clientY-bounds.top};container.classList.add('pointer-active');if(!running){running=true;requestAnimationFrame(render)}});
   container.addEventListener('pointerleave',()=>{pointer=null});
  }
@@ -44,3 +44,4 @@ const dialog=document.getElementById('overview-dialog');
 for(const id of ['open-overview','overview-image'])document.getElementById(id).addEventListener('click',()=>dialog.showModal());
 document.getElementById('close-overview').addEventListener('click',()=>dialog.close());
 dialog.addEventListener('click',event=>{if(event.target===dialog){const box=dialog.getBoundingClientRect();if(event.clientX<box.left||event.clientX>box.right||event.clientY<box.top||event.clientY>box.bottom)dialog.close()}});
+
