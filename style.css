@@ -11,3 +11,6 @@
 
 .health-hud{aspect-ratio:324/55;width:min(648px,88%)}.health-fill{left:1.54321%;top:29.09091%;width:83.33333%;height:16.36364%}.mini-hud{width:50%!important}.hud-display .health-hud{width:min(648px,95%)}
 
+.trail-controls{display:flex;gap:8px;margin-bottom:26px}.trail-controls button{background:transparent;border:1px solid #654775;color:#cdb5dc;padding:9px 15px;border-radius:6px;font-size:11px}.trail-controls button[aria-pressed="true"]{background:#4b2e5c;border-color:#b98cd0;color:#f2dff8}.motion-copy .trail-controls{grid-column:1/-1}.install-links{flex-wrap:wrap}.overview-button{max-height:760px}
+@media(max-width:800px){.motion-copy{display:block}}
+
