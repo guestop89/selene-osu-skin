@@ -1,3 +1,6 @@
+MISE À JOUR VISUELLE 1.0.1 — nom conservé : SELENE V1 Realease
+HUD 324×55 px (au lieu de 324×79), vie 270×9 à l’origine native (5,16). Avatar 33 px, drapeau et pseudo reliés. Halo violet à cœur clair, traînée violette. Anneaux blancs plus simples, intérieur plus transparent. Jugements 24 px, alpha réduit, fondu 42 frames à 60 i/s. Boucle de vie 6 secondes à faible amplitude. Le lissage de la valeur de vie et la longueur réelle de traînée restent contrôlés par le client. Mania et sons inchangés. Vérifié techniquement, sans test de gameplay en client.
+
 # SÉLÈNE V1 / AzuRT
 
 Importer SELENE V1 Realease.osk dans osu!, puis sélectionner le skin. Version complète. Le skin.ini garde Version: 2.7 (version du format legacy) ; la release est bien V1 / 1.0.
@@ -11,15 +14,15 @@ Les chiffres de combo sont blancs ; le suffixe natif x est remplacé graphiqueme
 Limite non résolue par le format : un .osk seul ne peut pas tester Combo % 100 == 0 pour passer le texte en jaune. Cette fonction n'est pas implémentée dans le pack et n'est pas montrée dans la galerie comme si elle fonctionnait en jeu. Une logique conditionnelle nécessiterait un composant/client ou un overlay distinct ; aucun programme externe n'est installé.
 
 ## :3 cartoon et fluide
-:3 vert pour 100, bleu pour 50, croix rose pour miss, parfait invisible. Dessin arrondi de 27 px, petit rebond élastique, très léger squash/stretch puis fondu. 42 images à 60 i/s. Le centre reste près de la note ; dans cette V1 les symboles restent droits pour se lire rapidement. Pas de position ou d'orientation aléatoire par hit. Le son de miss reste le combobreak discret soumis aux règles du jeu.
+:3 vert pour 100, bleu pour 50, croix rose pour miss, parfait invisible. Dessin arrondi de 24 px, petit rebond élastique, très léger squash/stretch puis fondu. 42 images à 60 i/s. Le centre reste près de la note ; dans cette V1 les symboles restent droits pour se lire rapidement. Pas de position ou d'orientation aléatoire par hit. Le son de miss reste le combobreak discret soumis aux règles du jeu.
 
 ## Tout le HUD de vie est relié
 Une coque unique arrondie rassemble le liquide rose/violet, le logo Sélène, le drapeau français, AzuRT et la vraie photo de profil du compte osu! 38408224. L'image originale vient de https://a.ppy.sh/38408224 et n'est pas redessinée par IA. Le pseudo est la personnalisation confirmée AzuRT ; aucune statistique ou classement n'est inventé.
-Le remplissage reste 320×14 px à l'origine native (5,16), avec 360 images à 60 i/s en boucle de six secondes. Le moteur garde le contrôle de la valeur de vie et de son lissage.
+Le remplissage reste 270×9 px à l'origine native (5,16), avec 360 images à 60 i/s en boucle de six secondes. Le moteur garde le contrôle de la valeur de vie et de son lissage.
 
 ## Réglages raisonnables, à adapter
-Curseur blanc équilibré de 80 px, stable au clic (CursorExpand: 0), centre fixe, traînée blanche courte sans cursormiddle. Le jeu conserve ses paramètres de taille, sensibilité, résolution, AR/CS et vitesse de défilement. Un skin ne peut pas choisir un réglage optimal universel pour tous les joueurs.
-Commencer vers 1× pour la taille du curseur, puis adapter à son écran et à sa préférence. Des variantes 64/80/96 px sont fournies dans downloads/SELENE-cursor-options.zip ; ajuster la taille dans les options du jeu reste le plus simple. Commencer avec un fond très assombri si la carte gêne la lecture. Les options de couleurs de beatmap peuvent remplacer les trois combos du skin.
+Curseur violet équilibré de 88 px, stable au clic (CursorExpand: 0), centre fixe, traînée violette courte sans cursormiddle. Le jeu conserve ses paramètres de taille, sensibilité, résolution, AR/CS et vitesse de défilement. Un skin ne peut pas choisir un réglage optimal universel pour tous les joueurs.
+Commencer vers 1× pour la taille du curseur, puis adapter à son écran et à sa préférence. Des variantes 64/88/96 px sont fournies dans SELENE-V1-tailles-curseur.zip ; ajuster la taille dans les options du jeu reste le plus simple. Commencer avec un fond très assombri si la carte gêne la lecture. Les options de couleurs de beatmap peuvent remplacer les trois combos du skin.
 Les hitsounds courts de la v0.9 sont conservés. Pour les entendre, vérifier les réglages d'échantillons/hitsounds de beatmaps et le volume des effets. Le .osk ne force pas un volume et n'ajoute pas un clic aux entrées ratées.
 
 ## Compatibilité et vérification
@@ -31,4 +34,5 @@ https://github.com/ppy/osu/blob/master/osu.Game/Skinning/LegacyDefaultComboCount
 https://osu.ppy.sh/wiki/en/Skinning/Interface
 https://osu.ppy.sh/users/38408224
 Design original AzuRT × Codex. Avatar original du compte indiqué, utilisé à la demande de l'utilisateur. Glyphes Windows rasterisés, aucune fonte Windows distribuée.
-Sources modifiables dans sources/SELENE-V1-sources.zip : Python 3.12+ avec Pillow et numpy sous Windows, scripts dans work/, avatar dans work/v1-assets/ et base complète dans work/v1-base/. Exécuter build_selene_v1.py. La base source incluse permet de reconstruire sans rejouer toutes les versions précédentes.
+Sources modifiables dans SELENE-V1-sources.zip : Python 3.12+ avec Pillow et numpy sous Windows, scripts dans work/, avatar dans work/v1-assets/ et base complète dans work/v1-base/. Exécuter build_selene_v1.py. La base source incluse permet de reconstruire sans rejouer toutes les versions précédentes.
+
