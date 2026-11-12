@@ -1,38 +1,50 @@
-MISE À JOUR VISUELLE 1.0.1 — nom conservé : SELENE V1 Realease
-HUD 324×55 px (au lieu de 324×79), vie 270×9 à l’origine native (5,16). Avatar 33 px, drapeau et pseudo reliés. Halo violet à cœur clair, traînée violette. Anneaux blancs plus simples, intérieur plus transparent. Jugements 24 px, alpha réduit, fondu 42 frames à 60 i/s. Boucle de vie 6 secondes à faible amplitude. Le lissage de la valeur de vie et la longueur réelle de traînée restent contrôlés par le client. Mania et sons inchangés. Vérifié techniquement, sans test de gameplay en client.
+# SELENE V1.2 Realease
 
-# SÉLÈNE V1 / AzuRT
+Version complète par AzuRT, issue du dernier pack personnalisé. Importer le .osk,
+puis sélectionner « SELENE V1.2 Realease » dans osu!.
 
-Importer SELENE V1 Realease.osk dans osu!, puis sélectionner le skin. Version complète. Le skin.ini garde Version: 2.7 (version du format legacy) ; la release est bien V1 / 1.0.
+## Tout ce qui est inclus
+- Curseur violet à cœur clair 96 px, sans agrandissement au clic, traînée 56 px.
+- Cercles rose/lavande/orchidée contrastés ; mêmes dimensions et zones de clic.
+- HUD compact 324×55, avatar osu! original, pseudo AzuRT et drapeau français reliés.
+- Vie rose/violet à 60 i/s, boucle de six secondes à faible amplitude.
+- Combo blanc et violet avec rebond natif ; :3 100/50, miss discret et parfait masqué.
+- Les 99 fichiers audio du pack de départ sont conservés à l'identique.
+- Les éléments propres à mania et les autres ajouts graphiques sont conservés.
 
-## Les deux références
-Cercles à bord blanc net, intérieur sombre légèrement teinté de rose/violet/orchidée, grand chiffre arrondi. C'est une interprétation originale du rendu fourni, sans reprendre les fichiers du skin tiers. Les approches restent plus fines que les notes, parfait masqué et peu de particules pour garder l'écran clair.
-Chiffres et textes skinnables rendus avec Comic Sans MS / Comic Sans MS Bold de Windows, plus naturels et cartoon. Ce sont des PNG ; aucune police à installer ni fichier de police Windows distribué. Les textes natifs de lazer peuvent conserver leur police système.
+## Améliorations de confort de la V1.2
+- Balle de slider plus lisible et anneau de suivi mieux contrasté, sans flash massif.
+- Petits points de liaison nacrés, réguliers et moins envahissants.
+- Boutons pause/retry/retour avec labels plus grands et hiérarchie visuelle plus nette.
+- Touches du compteur d'entrées moins opaques, bord conservé pour le contraste.
+- Pack complet, guide unique, version visible et empreintes de téléchargement.
+- La vitrine affiche les assets actuels et permet de comparer les deux traînées.
 
-## Le vrai combo du jeu
-Les chiffres de combo sont blancs ; le suffixe natif x est remplacé graphiquement par le mot Combo violet, selon la seconde capture. Le compteur n'est pas une image fixe : il affiche bien le combo réel. Le composant LegacyDefaultComboCounter de lazer réalise un rebond natif à chaque incrément et un effet de pop-out. Le skin exploite cette animation avec des glyphes arrondis et un compteur sans panneau massif. L'amplitude et le timing exacts restent ceux du client.
-Limite non résolue par le format : un .osk seul ne peut pas tester Combo % 100 == 0 pour passer le texte en jaune. Cette fonction n'est pas implémentée dans le pack et n'est pas montrée dans la galerie comme si elle fonctionnait en jeu. Une logique conditionnelle nécessiterait un composant/client ou un overlay distinct ; aucun programme externe n'est installé.
+## Les deux traînées
+Principal : traînée persistante native, 500 ms dans lazer actuel, avec interpolation.
+Options/SELENE V1.2 Realease - Points.osk : points discontinus à environ 60 Hz,
+150 ms dans lazer actuel. Les deux sont des skins complets et ont le même curseur.
+Ces durées sont fixées par le client ; un .osk ne peut pas imposer une valeur libre.
+L'espacement à l'écran dépend du mouvement, de la résolution et de la taille réglée.
 
-## :3 cartoon et fluide
-:3 vert pour 100, bleu pour 50, croix rose pour miss, parfait invisible. Dessin arrondi de 24 px, petit rebond élastique, très léger squash/stretch puis fondu. 42 images à 60 i/s. Le centre reste près de la note ; dans cette V1 les symboles restent droits pour se lire rapidement. Pas de position ou d'orientation aléatoire par hit. Le son de miss reste le combobreak discret soumis aux règles du jeu.
+## Compatibilité
+Format legacy pour stable/lazer. Les menus visent stable ; le HUD personnalisé,
+l'accuracy et les pp concernent lazer. Pas de pp calculés par le skin seul dans stable.
+Le jaune automatique tous les 100 combos et les jugements positionnés aléatoirement
+ne sont pas implémentés. Les valeurs, la sensibilité, les volumes et les touches
+restent contrôlés par le client. Aucun réglage n'est optimal pour tous les joueurs.
 
-## Tout le HUD de vie est relié
-Une coque unique arrondie rassemble le liquide rose/violet, le logo Sélène, le drapeau français, AzuRT et la vraie photo de profil du compte osu! 38408224. L'image originale vient de https://a.ppy.sh/38408224 et n'est pas redessinée par IA. Le pseudo est la personnalisation confirmée AzuRT ; aucune statistique ou classement n'est inventé.
-Le remplissage reste 270×9 px à l'origine native (5,16), avec 360 images à 60 i/s en boucle de six secondes. Le moteur garde le contrôle de la valeur de vie et de son lissage.
+## Vérification
+Intégrité des archives, dimensions SD/@2x, conservation des sons et de mania,
+images décodables et liens du site contrôlés. Aperçus et animations composés hors
+jeu ; aucun test d'import ou de gameplay en client pour cette release.
 
-## Réglages raisonnables, à adapter
-Curseur violet équilibré de 88 px, stable au clic (CursorExpand: 0), centre fixe, traînée violette courte sans cursormiddle. Le jeu conserve ses paramètres de taille, sensibilité, résolution, AR/CS et vitesse de défilement. Un skin ne peut pas choisir un réglage optimal universel pour tous les joueurs.
-Commencer vers 1× pour la taille du curseur, puis adapter à son écran et à sa préférence. Des variantes 64/88/96 px sont fournies dans SELENE-V1-tailles-curseur.zip ; ajuster la taille dans les options du jeu reste le plus simple. Commencer avec un fond très assombri si la carte gêne la lecture. Les options de couleurs de beatmap peuvent remplacer les trois combos du skin.
-Les hitsounds courts de la v0.9 sont conservés. Pour les entendre, vérifier les réglages d'échantillons/hitsounds de beatmaps et le volume des effets. Le .osk ne force pas un volume et n'ajoute pas un clic aux entrées ratées.
+## Crédits
+Personnalisation et direction du skin : AzuRT. Avatar du compte osu! 38408224.
+Polices Windows rasterisées en PNG ; aucun fichier de police Windows distribué.
+Références de direction artistique : Mizuki / Sleepy / Aristia et Sorasaki Hina,
+sans reprise de leurs fichiers. Pas d'affiliation officielle avec osu!.
 
-## Compatibilité et vérification
-Format legacy : assets de menu visant stable ; pp, accuracy et layout personnalisés pour lazer. Stable ne calcule pas les pp avec le .osk seul. Les autres modes gardent leurs assets spécifiques ; les images partagées, les polices de compteurs et les sons communs évoluent. Les touches et la vitesse de mania restent inchangées.
-Archive, images SD/@2x, 360 frames de vie, 42 frames de jugements, présence du suffixe Combo, configuration du composant natif, absence de clipping des glyphes et fichiers audio vérifiés techniquement. Pas de test d'import ou de gameplay en client pour cette V1 : confort, placement et performances doivent encore être évalués sur ta configuration. La galerie montre les vraies frames et des simulations explicites, pas des captures du client. Les scores sont illustratifs.
-
-## Sources
-https://github.com/ppy/osu/blob/master/osu.Game/Skinning/LegacyDefaultComboCounter.cs
 https://osu.ppy.sh/wiki/en/Skinning/Interface
-https://osu.ppy.sh/users/38408224
-Design original AzuRT × Codex. Avatar original du compte indiqué, utilisé à la demande de l'utilisateur. Glyphes Windows rasterisés, aucune fonte Windows distribuée.
-Sources modifiables dans SELENE-V1-sources.zip : Python 3.12+ avec Pillow et numpy sous Windows, scripts dans work/, avatar dans work/v1-assets/ et base complète dans work/v1-base/. Exécuter build_selene_v1.py. La base source incluse permet de reconstruire sans rejouer toutes les versions précédentes.
+https://github.com/ppy/osu/blob/master/osu.Game.Rulesets.Osu/Skinning/Legacy/LegacyCursorTrail.cs
 
