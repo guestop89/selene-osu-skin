@@ -20,12 +20,13 @@ puis sélectionner « SELENE V1.2 Realease » dans osu!.
 - Pack complet, guide unique, version visible et empreintes de téléchargement.
 - La vitrine affiche les assets actuels et permet de comparer les deux traînées.
 
-## Les deux traînées
-Principal : traînée persistante native, 500 ms dans lazer actuel, avec interpolation.
-Options/SELENE V1.2 Realease - Points.osk : points discontinus à environ 60 Hz,
-150 ms dans lazer actuel. Les deux sont des skins complets et ont le même curseur.
-Ces durées sont fixées par le client ; un .osk ne peut pas imposer une valeur libre.
-L'espacement à l'écran dépend du mouvement, de la résolution et de la taille réglée.
+## Traînée courte de la V1.2 finale
+Le pack principal utilise maintenant des points discontinus à environ 60 Hz,
+avec un fondu natif de 150 ms dans lazer actuel, contre 500 ms précédemment.
+La persistance est réduite de 70 %. Le curseur violet 96 px et les points de
+56 px sont conservés. Le cursormiddle est absent pour activer ce mode court.
+Le nombre et l'espacement des points dépendent de la vitesse du mouvement.
+Le téléchargement Points historique utilise le même mode court.
 
 ## Compatibilité
 Format legacy pour stable/lazer. Les menus visent stable ; le HUD personnalisé,
