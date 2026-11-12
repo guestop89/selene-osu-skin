@@ -8,7 +8,7 @@
 ## Dans la V1
 
 - Ronds à bord blanc, centres transparents teintés de rose, lavande et orchidée ; grands chiffres arrondis.
-- Curseur blanc lumineux de 80 px, stable au clic, et traînée courte. Variantes de 64 et 96 px fournies.
+- Curseur violet lumineux de 88 px, stable au clic, et traînée courte. Variantes de 64 et 96 px fournies.
 - Barre de vie rose/violet animée à 60 i/s, avec un bloc relié réunissant Sélène, le drapeau français, AzuRT et son avatar osu!.
 - Combo réel avec chiffres blancs, suffixe « Combo » violet et rebond natif du client.
 - `:3` vert pour 100, bleu pour 50, petite croix pour miss ; 42 frames de rebond et de fondu. Parfaits invisibles.
@@ -45,3 +45,4 @@ Pour prévisualiser, servir la racine avec un serveur HTTP statique. GitHub Page
 Design original personnalisé pour AzuRT, réalisé avec Codex. Références de direction artistique : Mizuki / Sleepy / Aristia et Sorasaki Hina, sans reprise de leurs fichiers. Avatar issu du profil osu! fourni par AzuRT. Glyphes Windows rasterisés en PNG ; aucun fichier de fonte Windows redistribué. Images et sons synthétisés dans les sources jointes. Pas d’affiliation officielle avec osu!.
 
 Les images et les sons du skin ainsi que l’avatar ont leurs crédits respectifs ; aucune licence globale n’est attribuée à des contenus tiers.
+
