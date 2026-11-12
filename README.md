@@ -10,14 +10,14 @@
 ## Dans la V1.2
 
 - Ronds à bord blanc, centres transparents teintés de rose, lavande et orchidée ; grands chiffres arrondis.
-- Curseur violet lumineux de 96 px, stable au clic, et traînée courte. Traînée de 56 px ; mode persistant et variante Points fournis.
+- Curseur violet lumineux de 96 px, stable au clic, et traînée courte. Points de 56 px avec un fondu natif court de 150 ms dans lazer ; la longue traînée a été remplacée.
 - Barre de vie rose/violet animée à 60 i/s, avec un bloc relié réunissant Sélène, le drapeau français, AzuRT et son avatar osu!.
 - Combo réel avec chiffres blancs, suffixe « Combo » violet et rebond natif du client.
 - `:3` vert pour 100, bleu pour 50, petite croix pour miss ; 42 frames de rebond et de fondu. Parfaits invisibles.
 - Repères de sliders plus nets, points de liaison discrets, touches moins opaques et boutons de pause plus lisibles.
 - 99 fichiers audio préservés ; ressources propres à mania conservées.
 
-![Simulation des animations](assets/motion.gif)
+![Simulation de la traînée courte](assets/motion.gif)
 
 ## Installer
 
@@ -25,7 +25,7 @@
 2. Ouvrir le fichier ou le glisser dans osu!, puis attendre l’import.
 3. Choisir **SELENE V1.2 Realease** dans les options de skin.
 
-Chaque `.osk` est complet ; aucune ancienne version n’est requise. La [variante Points](downloads/SELENE-V1-Points.osk) et les [sources modifiables](sources/SELENE-V1-sources.zip) sont facultatives.
+Chaque `.osk` est complet ; aucune ancienne version n’est requise. La traînée courte est directement incluse. Les [sources modifiables](sources/SELENE-V1-sources.zip) sont facultatives.
 
 ## Première édition
 
