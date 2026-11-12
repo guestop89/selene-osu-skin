@@ -1,11 +1,10 @@
 'use strict';
 const reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)');
 const colors=[[255,139,197],[191,153,255],[231,158,245]];
-const loadImage=src=>new Promise((resolve,reject)=>{const im=new Image();im.onload=()=>resolve(im);im.onerror=()=>reject(new Error('Image indisponible : '+src));im.src=src+(src.startsWith('data:')?'':(src.includes('?')?'&':'?')+'v=1.2')});
+const loadImage=src=>new Promise((resolve,reject)=>{const im=new Image();im.onload=()=>resolve(im);im.onerror=()=>reject(new Error('Image indisponible : '+src));im.src=src+(src.startsWith('data:')?'':(src.includes('?')?'&':'?')+'v=1.2-short')});
 const volume=document.getElementById('volume');
 let soundVolume=.45,lastAudio=null,toastTimer;
-let trailMode="persistent";
-document.querySelectorAll("[data-trail-mode]").forEach(button=>button.addEventListener("click",()=>{trailMode=button.dataset.trailMode;document.querySelectorAll("[data-trail-mode]").forEach(b=>b.setAttribute("aria-pressed",String(b===button)))}));
+let trailMode="points";
 const sounds={};
 for(const name of ['normal-hitnormal','soft-hitnormal','drum-hitnormal']){const a=new Audio(`assets/${name}.wav`);a.preload='auto';sounds[name]=a}
 function toast(message){const el=document.getElementById('toast');el.textContent=message;el.classList.add('visible');clearTimeout(toastTimer);toastTimer=setTimeout(()=>el.classList.remove('visible'),2500)}
@@ -37,10 +36,10 @@ Promise.all([loadImage('assets/cursor.png'),loadImage('assets/cursortrail.png')]
   function resize(){const bounds=container.getBoundingClientRect();width=bounds.width;height=bounds.height;const ratio=Math.min(2,window.devicePixelRatio||1);canvas.width=Math.round(width*ratio);canvas.height=Math.round(height*ratio);ctx.setTransform(ratio,0,0,ratio,0,0)}
   new ResizeObserver(resize).observe(container);resize();
   function render(time){
-   const duration=trailMode==='persistent'?500:150;
+   const duration=150;
    ctx.clearRect(0,0,width,height);points=points.filter(p=>time-p.time<duration);
    if(pointer&&trailMode==='points'&&time-previousTime>=1000/60){points.push({...pointer,time});previousTime=time}
-   if(!reducedMotion.matches){ctx.globalCompositeOperation=trailMode==='persistent'?'lighter':'source-over';for(const p of points){const life=1-(time-p.time)/duration;ctx.globalAlpha=Math.max(0,life);ctx.drawImage(trail,p.x-28,p.y-28,56,56)}}
+   if(!reducedMotion.matches){ctx.globalCompositeOperation='source-over';for(const p of points){const life=1-(time-p.time)/duration;ctx.globalAlpha=Math.max(0,life);ctx.drawImage(trail,p.x-28,p.y-28,56,56)}}
    ctx.globalCompositeOperation='source-over';ctx.globalAlpha=1;
    if(pointer){const size=container.id==='cursor-lab'?96:72;ctx.drawImage(cursor,pointer.x-size/2,pointer.y-size/2,size,size)}
    if(pointer||points.length){requestAnimationFrame(render)}else{running=false;container.classList.remove('pointer-active')}
