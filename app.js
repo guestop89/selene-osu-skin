@@ -1,6 +1,6 @@
 'use strict';
 const reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)');
-const colors=[[255,139,197],[191,153,255],[231,158,245]];
+const colors=[[204,146,255],[173,130,255],[227,170,255]];
 const loadImage=src=>new Promise((resolve,reject)=>{const im=new Image();im.onload=()=>resolve(im);im.onerror=()=>reject(new Error('Image indisponible : '+src));im.src=src+(src.startsWith('data:')?'':(src.includes('?')?'&':'?')+'v=1.2-short')});
 const volume=document.getElementById('volume');
 let soundVolume=.45,lastAudio=null,toastTimer;
@@ -16,16 +16,28 @@ let comboCount=438,comboAtlas;
 const comboCanvas=document.getElementById('combo');
 function drawCombo(){if(!comboAtlas)return;comboCanvas.width=Math.max(500,String(comboCount).length*64+266);const ctx=comboCanvas.getContext('2d');ctx.clearRect(0,0,comboCanvas.width,100);let x=0;for(const d of String(comboCount)){ctx.drawImage(comboAtlas,Number(d)*66,0,66,100,x,0,66,100);x+=64}ctx.drawImage(comboAtlas,660,0,266,100,x,0,266,100);comboCanvas.setAttribute('aria-label',`${comboCount} Combo, valeur illustrative`)}
 loadImage('assets/combo-atlas.png').then(im=>{comboAtlas=im;drawCombo()}).catch(()=>{});
-Promise.all([loadImage('assets/hitcircle.png'),loadImage('assets/hitcircleoverlay.png')]).then(([base,overlay])=>{document.querySelectorAll('.note-art').forEach(canvas=>{const color=colors[Number(canvas.parentElement.dataset.color)];const ctx=canvas.getContext('2d');ctx.drawImage(base,0,0,256,256);const pixels=ctx.getImageData(0,0,256,256);for(let i=0;i<pixels.data.length;i+=4){for(let c=0;c<3;c++)pixels.data[i+c]=Math.round(pixels.data[i+c]*color[c]/255)}ctx.putImageData(pixels,0,0);ctx.drawImage(overlay,0,0,256,256)})}).catch(()=>toast('Certains aperçus n’ont pas pu être chargés. Rechargez la page.'));
+Promise.all([loadImage('assets/hitcircle.png?v=1.4'),loadImage('assets/hitcircleoverlay.png?v=1.4')]).then(([base,overlay])=>{document.querySelectorAll('.note-art').forEach(canvas=>{const color=colors[Number(canvas.parentElement.dataset.color)];const ctx=canvas.getContext('2d');ctx.drawImage(base,0,0,256,256);const pixels=ctx.getImageData(0,0,256,256);for(let i=0;i<pixels.data.length;i+=4){for(let c=0;c<3;c++)pixels.data[i+c]=Math.round(pixels.data[i+c]*color[c]/255)}ctx.putImageData(pixels,0,0);ctx.drawImage(overlay,0,0,256,256)})}).catch(()=>toast('Certains aperçus n’ont pas pu être chargés. Rechargez la page.'));
 let hitCount=0;
 document.querySelectorAll('.hitobject').forEach(button=>button.addEventListener('click',()=>{playSound('normal-hitnormal');comboCount++;hitCount++;drawCombo();const counter=document.querySelector('.demo-combo');counter.classList.remove('combo-bounce');void counter.offsetWidth;counter.classList.add('combo-bounce');button.classList.remove('hit');void button.offsetWidth;button.classList.add('hit');const judge=document.createElement('span');judge.className=`judgement ${hitCount%4===0?'blue':'green'}`;judge.style.left=button.offsetLeft+'px';judge.style.top=button.offsetTop+'px';judge.setAttribute('aria-hidden','true');button.parentElement.appendChild(judge);setTimeout(()=>judge.remove(),720)}));
 
 // Real 60 fps health frames from the skin. The browser controls only the preview.
 let healthFrames=[];
-fetch('assets/health.json').then(r=>{if(!r.ok)throw Error();return r.json()}).then(data=>Promise.all(data.map(src=>loadImage('data:image/png;base64,'+src)))).then(images=>{healthFrames=images;cancelAnimationFrame(healthRequest);drawHealth(0)}).catch(()=>{});
+fetch('assets/health.json?v=1.4').then(r=>{if(!r.ok)throw Error();return r.json()}).then(data=>Promise.all(data.map(src=>loadImage('data:image/png;base64,'+src)))).then(images=>{healthFrames=images;cancelAnimationFrame(healthRequest);drawHealth(0)}).catch(()=>{});
 const healthCanvases=[...document.querySelectorAll('.health-fill')];
 let lastHealth=-1,healthRequest;
-function drawHealth(t){const index=reducedMotion.matches?0:Math.floor(t*.06)%360;if(healthFrames.length&&index!==lastHealth){lastHealth=index;healthCanvases.forEach(c=>{const ctx=c.getContext('2d');ctx.clearRect(0,0,c.width,c.height);ctx.drawImage(healthFrames[index],0,0,540,18)})}if(!reducedMotion.matches&&!document.hidden)healthRequest=requestAnimationFrame(drawHealth)}
+function drawHealth(time) {
+ if (!healthFrames.length) return;
+ const index = reducedMotion.matches ? 0 : Math.floor(time * .06) % healthFrames.length;
+ if (index !== lastHealth) {
+  lastHealth = index;
+  for (const canvas of healthCanvases) {
+   const ctx = canvas.getContext('2d');
+   ctx.clearRect(0, 0, canvas.width, canvas.height);
+   ctx.drawImage(healthFrames[index], 0, 0, canvas.width, canvas.height);
+  }
+ }
+ if (!reducedMotion.matches && !document.hidden) healthRequest = requestAnimationFrame(drawHealth);
+}
 document.addEventListener('visibilitychange',()=>{cancelAnimationFrame(healthRequest);if(!document.hidden)drawHealth(performance.now())});
 reducedMotion.addEventListener('change',()=>{cancelAnimationFrame(healthRequest);lastHealth=-1;drawHealth(performance.now())});
 

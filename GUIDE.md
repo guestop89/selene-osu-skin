@@ -1,3 +1,13 @@
+# SELENE V1.4 Prisme
+
+Importer `SELENE-V1.4-Prisme.osk`, puis choisir **SELENE V1.4 Prisme**.
+
+Le portrait est repris de la version précédente d’AzuRT. Le filet violet démarre sous le portrait et s’aligne avec le drapeau. Les petits chiffres des notes laissent place au prisme au centre des cercles et des têtes de sliders. Le compteur de points de performance de lazer conserve son placement.
+
+Les dimensions, les fichiers et les références de l’archive ont été vérifiés. L’aperçu est composé hors jeu.
+
+---
+
 # SELENE V1.3 Glow
 
 Importer `SELENE-V1.3-Glow.osk`, puis choisir **SELENE V1.3 Glow** dans osu!.

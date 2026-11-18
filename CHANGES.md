@@ -1,3 +1,9 @@
+# V1.4 Prisme
+
+- Barre de vie violette, portrait à gauche, AzuRT au-dessus et drapeau français à droite.
+- Cercles et têtes de sliders à double contour violet, prisme cyan, rose, ambre et lavande au centre.
+- Nouvelle version complète .osk et aperçu de la vitrine.
+
 # V1.3 Glow
 
 - Curseur en petite boule lisse nacrée lavande, cœur légèrement agrandi et fin bord lumineux.
