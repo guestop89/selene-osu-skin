@@ -1,14 +1,47 @@
-# SELENE V1.5 Reference
+<p align="center"><img src="favicon.svg" width="48" alt="SELENE"></p>
+<h1 align="center">SELENE 2.0</h1>
+<p align="center">La nuit, en rythme. Un skin osu! personnalisé pour AzuRT.</p>
+<p align="center"><a href="https://guestop89.github.io/selene-osu-skin/">Découvrir la vitrine</a> · <a href="https://github.com/guestop89/selene-osu-skin/raw/refs/heads/main/downloads/SELENE-V2.0.osk">Télécharger le skin</a> · <a href="downloads/SELENE-V2.0-complet.zip">Pack complet</a></p>
 
-[Télécharger le skin](downloads/SELENE-V1.5-Reference.osk)
+![Aperçu général de SELENE 2.0](assets/v2-overview.jpg)
 
-![Aperçu](assets/reference-preview.jpg)
+## Une nouvelle identité
 
-Cercles et sliders à contours blancs, prismes multicolores, curseur rond lumineux avec sa traînée violette et barre de vie lavande à motif fin. Des ailes blanches courbes suivent la balle du slider et pivotent selon sa trajectoire. AzuRT et le combo utilisent Google Sans, et le combo est réduit de 20 %. Importer le .osk dans osu! et choisir SELENE V1.5 Reference.
+- Anneaux blancs et centres sombres translucides.
+- Prismes cyan, lavande, rose et or, légèrement agrandis.
+- Curseur rond nacré et traînée violette courte.
+- Ailes blanches de slider, animées et orientées suivant la trajectoire. Le prisme central garde son orientation.
+- Signature AzuRT calligraphique au-dessus de la barre de vie lavande.
+- Combo en Google Sans, environ 20 % plus petit, avec son rebond natif.
 
-Éléments redessinés depuis une capture fournie par AzuRT. Le fond de jeu dépend de la beatmap. Les ornements sont une interprétation, les fichiers du skin original ne sont pas fournis. Le pack a été vérifié techniquement et reste à essayer dans le client.
+![Signature AzuRT et barre de vie](assets/v2-hud.png)
 
+## En mouvement
 
-Les ailes sont exclusivement intégrées aux images de la balle mobile du slider. Le moteur gère leur apparition pendant le slider et leur rotation suivant sa trajectoire. Les 32 images donnent une pulsation légère, dont la cadence native dépend de la vitesse du slider dans lazer. La vitrine montre une simulation.
+![Simulation du slider avec prisme fixe](assets/v2-slider.gif)
 
-Le prisme central utilise la couche native sliderb-spec, dont la rotation est annulée par le moteur. Les ailes restent sur la couche animée orientée selon la trajectoire.
+Les 32 images des ailes utilisent la cadence native de la balle de slider, liée à sa vitesse dans lazer. Les aperçus sont composés à partir des fichiers du skin et l’animation est une simulation hors jeu.
+
+![Prismes multicolores](assets/v2-prisms.png)
+
+![Curseur et traînée violette](assets/v2-cursor.png)
+
+## Installer
+
+1. Télécharger [SELENE V2.0.osk](downloads/SELENE-V2.0.osk).
+2. Ouvrir le fichier dans osu!, puis attendre son import.
+3. Sélectionner **SELENE V2.0** dans les options de skin.
+
+Le [pack complet](downloads/SELENE-V2.0-complet.zip) contient le skin, les aperçus, le guide et les sources de reconstruction. Les [sources](sources/SELENE-V2.0-sources.zip) sont aussi disponibles séparément. Les empreintes des téléchargements figurent dans [SHA256SUMS.txt](downloads/SHA256SUMS.txt).
+
+## Compatibilité
+
+Format legacy pour osu!stable et osu!lazer. Les menus visent surtout stable et le HUD personnalisé concerne lazer. Les tailles du curseur et du HUD dépendent des réglages du client. Le fond et les objets joués dépendent de la beatmap.
+
+L’intégrité de l’archive, les PNG SD/HD, la conservation des 99 sons et des ressources mania, les animations et les liens ont été vérifiés. L’import et le gameplay dans un client osu! restent à confirmer. Voir le [guide](GUIDE.md) et les [notes de version](CHANGES.md).
+
+## Crédits et versions précédentes
+
+Personnalisation pour AzuRT. Ornements retravaillés depuis une référence fournie avec image_gen, puis intégrés et animés dans les ressources du skin. Les motifs constituent une interprétation de la référence. Signature en Z003 et combo en Google Sans, rasterisés en PNG. Aucun fichier de police n’est redistribué. Les contenus tiers conservent leurs crédits respectifs. Pas d’affiliation officielle avec osu!.
+
+[SELENE V1.3 Glow](downloads/SELENE-V1.3-Glow.osk) · [Ribbon Edition](downloads/SELENE-Ribbon.osk)

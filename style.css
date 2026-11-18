@@ -29,3 +29,13 @@
 .demo-slider.is-held>.slider-effect{animation:slider-wing-pulse .54s ease-in-out infinite}
 @keyframes slider-wing-pulse{from,to{transform:translate(-25%,-50%) scale(.96);opacity:.82}50%{transform:translate(-25%,-50%) scale(1.02);opacity:1}}
 @media(prefers-reduced-motion:reduce){.demo-slider.is-held>.slider-effect{animation:none}}
+
+/* Release gallery */
+.release-gallery{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:24px}
+.release-gallery figure{margin:0;border:1px solid #47354f;border-radius:12px;background:#111215;overflow:hidden}
+.release-gallery img{width:100%;height:260px;object-fit:contain}
+.release-gallery figcaption{font-size:12px;line-height:1.7;color:#bca9c9;padding:16px 22px;border-top:1px solid #302534}
+.release-gallery .release-hud,.release-gallery .release-cursor{grid-column:1/-1}
+.release-gallery .release-hud img{height:auto}
+.release-gallery .release-cursor img{height:220px}
+@media(max-width:650px){.release-gallery{grid-template-columns:1fr;gap:16px}.release-gallery img{height:220px}.release-gallery figcaption{padding:14px 16px}}
