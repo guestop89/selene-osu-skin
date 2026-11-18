@@ -1,10 +1,10 @@
 # V1.3 Glow
 
 - Curseur en petite boule lisse nacrée lavande, cœur légèrement agrandi et fin bord lumineux.
-- Halo court dépassant légèrement de la boule ; transparence et centrage conservés.
+- Aura diffuse rose et violette et traînée courte plus douce. La vitrine fait glisser la lumière derrière le cœur lors des déplacements.
 - PNG SD 108×108 et HD 216×216 ; taille stable au clic.
 - Skin complet, pack curseur seul, sources et aperçu avant/après.
-- 99 sons, mania, traînée et autres fichiers du skin préservés.
+- 99 sons et ressources mania préservés.
 - Archives et dimensions vérifiées ; gameplay non testé en client.
 
 # V1.2

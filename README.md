@@ -9,16 +9,16 @@
 
 ## Nouveau dans la V1.3
 
-- Petite boule lisse nacrée lavande, centre un peu plus grand et bord lumineux à halo court.
+- Boule nacrée lavande entourée d’une aura diffuse rose et violette. Une traînée douce prolonge la lumière en mouvement.
 - PNG transparents de 108 px et 216 px (@2x), centrés ; taille stable au clic.
-- [Curseur seul](downloads/SELENE-V1.3-curseur.zip) pour une installation manuelle.
+- [Curseur et traînée](downloads/SELENE-V1.3-curseur.zip) pour une installation manuelle.
 
 ![Avant / après du curseur](assets/cursor-comparison.png)
 
 ## Hérité de la V1.2
 
 - Ronds à bord blanc, centres transparents teintés de rose, lavande et orchidée ; grands chiffres arrondis.
-- Traînée courte préservée : points de 56 px avec le fondu natif de la V1.2.
+- Traînée courte de 56 px avec le fondu natif de la V1.2 et une nouvelle texture lumineuse.
 - Barre de vie rose/violet animée à 60 i/s, avec un bloc relié réunissant Sélène, le drapeau français, AzuRT et son avatar osu!.
 - Combo réel avec chiffres blancs, suffixe « Combo » violet et rebond natif du client.
 - `:3` vert pour 100, bleu pour 50, petite croix pour miss ; 42 frames de rebond et de fondu. Parfaits invisibles.
