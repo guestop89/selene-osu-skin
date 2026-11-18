@@ -1,31 +1,41 @@
 <p align="center"><img src="favicon.svg" width="58" alt="SELENE"></p>
-<h1 align="center">SELENE V1.2 Realease</h1>
+<h1 align="center">SELENE V1.3 Glow</h1>
 <p align="center">La nuit, en rythme.<br>Un skin osu! rose et violet, personnalisé pour <a href="https://osu.ppy.sh/users/38408224">AzuRT</a>.</p>
-<p align="center"><a href="https://guestop89.github.io/selene-osu-skin/">Découvrir la vitrine</a> · <a href="https://github.com/guestop89/selene-osu-skin/raw/refs/heads/main/downloads/SELENE-V1-Realease.osk">Télécharger la V1.2</a> · <a href="GUIDE.md">Guide du skin</a></p>
+<p align="center"><a href="https://guestop89.github.io/selene-osu-skin/">Découvrir la vitrine</a> · <a href="https://github.com/guestop89/selene-osu-skin/raw/refs/heads/main/downloads/SELENE-V1.3-Glow.osk">Télécharger la V1.3</a> · <a href="GUIDE.md">Guide du skin</a></p>
 
-![Aperçu de SELENE V1.2](assets/overview.jpg)
+![Vue d’ensemble de la V1.2, hors nouveau curseur](assets/overview.jpg)
 
-[Pack complet avec options](downloads/SELENE-V1.2-complet.zip) · [Nouveautés V1.2](CHANGES.md)
+[Pack complet avec options](downloads/SELENE-V1.3-complet.zip) · [Nouveautés V1.3](CHANGES.md)
 
-## Dans la V1.2
+## Nouveau dans la V1.3
+
+- Boule nacrée lavande entourée d’une aura diffuse rose et violette. Une traînée douce prolonge la lumière en mouvement.
+- PNG transparents de 108 px et 216 px (@2x), centrés ; taille stable au clic.
+- [Curseur et traînée](downloads/SELENE-V1.3-curseur.zip) pour une installation manuelle.
+
+![Avant / après du curseur](assets/cursor-comparison.png)
+
+## Hérité de la V1.2
 
 - Ronds à bord blanc, centres transparents teintés de rose, lavande et orchidée ; grands chiffres arrondis.
-- Curseur violet lumineux de 96 px, stable au clic, et traînée courte. Points de 56 px avec un fondu natif court de 150 ms dans lazer ; la longue traînée a été remplacée.
+- Traînée courte de 56 px avec le fondu natif de la V1.2 et une nouvelle texture lumineuse.
 - Barre de vie rose/violet animée à 60 i/s, avec un bloc relié réunissant Sélène, le drapeau français, AzuRT et son avatar osu!.
 - Combo réel avec chiffres blancs, suffixe « Combo » violet et rebond natif du client.
 - `:3` vert pour 100, bleu pour 50, petite croix pour miss ; 42 frames de rebond et de fondu. Parfaits invisibles.
 - Repères de sliders plus nets, points de liaison discrets, touches moins opaques et boutons de pause plus lisibles.
 - 99 fichiers audio préservés ; ressources propres à mania conservées.
 
-![Simulation de la traînée courte](assets/motion.gif)
+Aperçu historique de la traînée V1.2 (ancien curseur) :
+
+![Simulation historique de la traînée courte](assets/motion.gif)
 
 ## Installer
 
-1. Télécharger [SELENE V1.2 Realease.osk](https://github.com/guestop89/selene-osu-skin/raw/refs/heads/main/downloads/SELENE-V1-Realease.osk).
+1. Télécharger [SELENE V1.3 Glow.osk](https://github.com/guestop89/selene-osu-skin/raw/refs/heads/main/downloads/SELENE-V1.3-Glow.osk).
 2. Ouvrir le fichier ou le glisser dans osu!, puis attendre l’import.
-3. Choisir **SELENE V1.2 Realease** dans les options de skin.
+3. Choisir **SELENE V1.3 Glow** dans les options de skin.
 
-Chaque `.osk` est complet ; aucune ancienne version n’est requise. La traînée courte est directement incluse. Les [sources modifiables](sources/SELENE-V1-sources.zip) sont facultatives.
+Chaque `.osk` est complet ; aucune ancienne version n’est requise. La traînée courte est directement incluse. Les [sources modifiables](sources/SELENE-V1.3-Glow-sources.zip) sont facultatives.
 
 ## Première édition
 

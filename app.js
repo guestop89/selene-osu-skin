@@ -4,7 +4,6 @@ const colors=[[255,139,197],[191,153,255],[231,158,245]];
 const loadImage=src=>new Promise((resolve,reject)=>{const im=new Image();im.onload=()=>resolve(im);im.onerror=()=>reject(new Error('Image indisponible : '+src));im.src=src+(src.startsWith('data:')?'':(src.includes('?')?'&':'?')+'v=1.2-short')});
 const volume=document.getElementById('volume');
 let soundVolume=.45,lastAudio=null,toastTimer;
-let trailMode="points";
 const sounds={};
 for(const name of ['normal-hitnormal','soft-hitnormal','drum-hitnormal']){const a=new Audio(`assets/${name}.wav`);a.preload='auto';sounds[name]=a}
 function toast(message){const el=document.getElementById('toast');el.textContent=message;el.classList.add('visible');clearTimeout(toastTimer);toastTimer=setTimeout(()=>el.classList.remove('visible'),2500)}
@@ -30,29 +29,89 @@ function drawHealth(t){const index=reducedMotion.matches?0:Math.floor(t*.06)%360
 document.addEventListener('visibilitychange',()=>{cancelAnimationFrame(healthRequest);if(!document.hidden)drawHealth(performance.now())});
 reducedMotion.addEventListener('change',()=>{cancelAnimationFrame(healthRequest);lastHealth=-1;drawHealth(performance.now())});
 
-Promise.all([loadImage('assets/cursor.png'),loadImage('assets/cursortrail.png')]).then(([cursor,trail])=>{
- for(const container of [document.getElementById('playfield'),document.getElementById('cursor-lab')]){
-  const canvas=container.querySelector('.cursor-canvas'),ctx=canvas.getContext('2d');let width=0,height=0,pointer=null,points=[],running=false,previousTime=0;
-  function resize(){const bounds=container.getBoundingClientRect();width=bounds.width;height=bounds.height;const ratio=Math.min(2,window.devicePixelRatio||1);canvas.width=Math.round(width*ratio);canvas.height=Math.round(height*ratio);ctx.setTransform(ratio,0,0,ratio,0,0)}
-  new ResizeObserver(resize).observe(container);resize();
-  function render(time){
-   const duration=150;
-   ctx.clearRect(0,0,width,height);points=points.filter(p=>time-p.time<duration);
-   if(pointer&&trailMode==='points'&&time-previousTime>=1000/60){points.push({...pointer,time});previousTime=time}
-   if(!reducedMotion.matches){ctx.globalCompositeOperation='source-over';for(const p of points){const life=1-(time-p.time)/duration;ctx.globalAlpha=Math.max(0,life);ctx.drawImage(trail,p.x-28,p.y-28,56,56)}}
-   ctx.globalCompositeOperation='source-over';ctx.globalAlpha=1;
-   if(pointer){const size=container.id==='cursor-lab'?96:72;ctx.drawImage(cursor,pointer.x-size/2,pointer.y-size/2,size,size)}
-   if(pointer||points.length){requestAnimationFrame(render)}else{running=false;container.classList.remove('pointer-active')}
+const auraAssets = ['cursor-core', 'cursor-halo', 'cursortrail'];
+Promise.all(auraAssets.map(name => loadImage(`assets/${name}.png?v=1.3-aura`))).then(([core, halo, trail]) => {
+ for (const id of ['playfield', 'cursor-lab']) {
+  const container = document.getElementById(id);
+  const canvas = container.querySelector('.cursor-canvas');
+  const ctx = canvas.getContext('2d');
+  const size = id === 'cursor-lab' ? 108 : 81;
+  const trailSize = size * 56 / 108;
+  const trailDuration = 150;
+  let width, height, pointer, aura, frame, previousFrame, lastPoint;
+  let points = [];
+
+  function resize() {
+   const bounds = container.getBoundingClientRect();
+   width = bounds.width;
+   height = bounds.height;
+   const ratio = Math.min(2, window.devicePixelRatio || 1);
+   canvas.width = Math.round(width * ratio);
+   canvas.height = Math.round(height * ratio);
+   ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
   }
-  container.addEventListener('pointermove',event=>{if(event.pointerType==='touch')return;const bounds=container.getBoundingClientRect();const next={x:event.clientX-bounds.left,y:event.clientY-bounds.top};if(trailMode==='persistent'&&pointer){const dx=next.x-pointer.x,dy=next.y-pointer.y,dist=Math.hypot(dx,dy),steps=Math.floor(dist/(56/2.5));for(let j=1;j<=steps;j++)points.push({x:pointer.x+dx*j/(steps+1),y:pointer.y+dy*j/(steps+1),time:performance.now()})}pointer=next;container.classList.add('pointer-active');if(!running){running=true;requestAnimationFrame(render)}});
-  container.addEventListener('pointerleave',()=>{pointer=null});
+
+  function draw(image, position, diameter) {
+   ctx.drawImage(image, position.x - diameter / 2, position.y - diameter / 2, diameter, diameter);
+  }
+
+  function render(time) {
+   frame = undefined;
+   const dt = previousFrame === undefined ? 16 : Math.min(time - previousFrame, 50);
+   previousFrame = time;
+   const motion = !reducedMotion.matches;
+   ctx.clearRect(0, 0, width, height);
+   points = motion ? points.filter(point => time - point.time < trailDuration) : [];
+
+   if (motion && pointer && (!lastPoint || (
+    time - lastPoint.time >= 1000 / 60 && Math.hypot(pointer.x - lastPoint.x, pointer.y - lastPoint.y) >= 2
+   ))) {
+    lastPoint = { ...pointer, time };
+    points.push(lastPoint);
+   }
+
+   for (const point of points) {
+    ctx.globalAlpha = 1 - (time - point.time) / trailDuration;
+    draw(trail, point, trailSize);
+   }
+   ctx.globalAlpha = 1;
+
+   if (pointer) {
+    if (!motion || !aura) aura = { ...pointer };
+    const follow = 1 - Math.exp(-dt / 40);
+    const dx = (aura.x - pointer.x) * (1 - follow);
+    const dy = (aura.y - pointer.y) * (1 - follow);
+    const limit = Math.min(1, (size * .09) / (Math.hypot(dx, dy) || 1));
+    aura.x = pointer.x + dx * limit;
+    aura.y = pointer.y + dy * limit;
+    draw(halo, aura, size);
+    draw(core, pointer, size);
+   }
+
+   if (pointer || points.length) {
+    frame = requestAnimationFrame(render);
+   } else {
+    previousFrame = undefined;
+    container.classList.remove('pointer-active');
+   }
+  }
+
+  new ResizeObserver(resize).observe(container);
+  resize();
+  container.addEventListener('pointermove', event => {
+   if (event.pointerType === 'touch') return;
+   const bounds = container.getBoundingClientRect();
+   pointer = { x: event.clientX - bounds.left, y: event.clientY - bounds.top };
+   container.classList.add('pointer-active');
+   if (frame === undefined) frame = requestAnimationFrame(render);
+  });
+  container.addEventListener('pointerleave', () => {
+   pointer = aura = lastPoint = undefined;
+  });
  }
-}).catch(()=>{});
+}).catch(() => {});
 
 const dialog=document.getElementById('overview-dialog');
 for(const id of ['open-overview','overview-image'])document.getElementById(id).addEventListener('click',()=>dialog.showModal());
 document.getElementById('close-overview').addEventListener('click',()=>dialog.close());
 dialog.addEventListener('click',event=>{if(event.target===dialog){const box=dialog.getBoundingClientRect();if(event.clientX<box.left||event.clientX>box.right||event.clientY<box.top||event.clientY>box.bottom)dialog.close()}});
-
-if(reducedMotion.matches){const gif=document.querySelector(".animation-row figure img");if(gif){gif.src="assets/overview.jpg";gif.alt="Aperçu statique, préférence de mouvements réduits"}}
-
