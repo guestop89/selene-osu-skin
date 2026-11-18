@@ -1,3 +1,11 @@
+# SELENE V1.5 Reference
+
+Cercles blancs, étoiles turquoise, HUD blanc, barre de vie à motif lumineux. Les éléments visibles sont redessinés depuis la capture fournie. Le fond anime et la disposition des objets dépendent de la beatmap. Les fichiers du skin original ne sont pas inclus.
+
+Importer le .osk, puis sélectionner SELENE V1.5 Reference dans osu!. Vérification des PNG SD et HD et de l’intégrité de l’archive effectuée. Essai dans le client à faire.
+
+---
+
 # SELENE V1.4 Prisme
 
 Importer `SELENE-V1.4-Prisme.osk`, puis choisir **SELENE V1.4 Prisme**.
