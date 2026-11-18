@@ -1,3 +1,9 @@
+## Ajustement V1.5
+
+- Curseur rond lumineux restauré.
+- AzuRT remplace le texte au-dessus de la barre, avec les mêmes police, taille et graisse.
+- Prismes centraux agrandis de 10,5 % et colorés en cyan, lavande, rose et or.
+
 # SELENE V1.5 Reference
 
 Cercles blancs, étoiles turquoise, HUD blanc, barre de vie à motif lumineux. Les éléments visibles sont redessinés depuis la capture fournie. Le fond anime et la disposition des objets dépendent de la beatmap. Les fichiers du skin original ne sont pas inclus.

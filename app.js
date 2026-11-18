@@ -16,7 +16,7 @@ let comboCount=438,comboAtlas;
 const comboCanvas=document.getElementById('combo');
 function drawCombo(){if(!comboAtlas)return;comboCanvas.width=Math.max(500,String(comboCount).length*64+266);const ctx=comboCanvas.getContext('2d');ctx.clearRect(0,0,comboCanvas.width,100);let x=0;for(const d of String(comboCount)){ctx.drawImage(comboAtlas,Number(d)*66,0,66,100,x,0,66,100);x+=64}ctx.drawImage(comboAtlas,660,0,266,100,x,0,266,100);comboCanvas.setAttribute('aria-label',`${comboCount} Combo, valeur illustrative`)}
 loadImage('assets/combo-atlas.png').then(im=>{comboAtlas=im;drawCombo()}).catch(()=>{});
-Promise.all([loadImage('assets/hitcircle.png?v=1.5'),loadImage('assets/hitcircleoverlay.png?v=1.5')]).then(([base,overlay])=>{document.querySelectorAll('.note-art').forEach(canvas=>{const color=colors[Number(canvas.parentElement.dataset.color)];const ctx=canvas.getContext('2d');ctx.drawImage(base,0,0,256,256);const pixels=ctx.getImageData(0,0,256,256);for(let i=0;i<pixels.data.length;i+=4){for(let c=0;c<3;c++)pixels.data[i+c]=Math.round(pixels.data[i+c]*color[c]/255)}ctx.putImageData(pixels,0,0);ctx.drawImage(overlay,0,0,256,256)})}).catch(()=>toast('Certains aperçus n’ont pas pu être chargés. Rechargez la page.'));
+Promise.all([loadImage('assets/hitcircle.png?v=1.5'),loadImage('assets/hitcircleoverlay.png?v=1.5b')]).then(([base,overlay])=>{document.querySelectorAll('.note-art').forEach(canvas=>{const color=colors[Number(canvas.parentElement.dataset.color)];const ctx=canvas.getContext('2d');ctx.drawImage(base,0,0,256,256);const pixels=ctx.getImageData(0,0,256,256);for(let i=0;i<pixels.data.length;i+=4){for(let c=0;c<3;c++)pixels.data[i+c]=Math.round(pixels.data[i+c]*color[c]/255)}ctx.putImageData(pixels,0,0);ctx.drawImage(overlay,0,0,256,256)})}).catch(()=>toast('Certains aperçus n’ont pas pu être chargés. Rechargez la page.'));
 let hitCount=0;
 document.querySelectorAll('.hitobject').forEach(button=>button.addEventListener('click',()=>{playSound('normal-hitnormal');comboCount++;hitCount++;drawCombo();const counter=document.querySelector('.demo-combo');counter.classList.remove('combo-bounce');void counter.offsetWidth;counter.classList.add('combo-bounce');button.classList.remove('hit');void button.offsetWidth;button.classList.add('hit');const judge=document.createElement('span');judge.className=`judgement ${hitCount%4===0?'blue':'green'}`;judge.style.left=button.offsetLeft+'px';judge.style.top=button.offsetTop+'px';judge.setAttribute('aria-hidden','true');button.parentElement.appendChild(judge);setTimeout(()=>judge.remove(),720)}));
 
@@ -41,7 +41,7 @@ function drawHealth(time) {
 document.addEventListener('visibilitychange',()=>{cancelAnimationFrame(healthRequest);if(!document.hidden)drawHealth(performance.now())});
 reducedMotion.addEventListener('change',()=>{cancelAnimationFrame(healthRequest);lastHealth=-1;drawHealth(performance.now())});
 
-Promise.all([loadImage('assets/cursor.png?v=1.5'), loadImage('assets/cursortrail.png?v=1.5')]).then(([cursor, trail]) => {
+Promise.all([loadImage('assets/cursor.png?v=1.5b'), loadImage('assets/cursortrail.png?v=1.5')]).then(([cursor, trail]) => {
  for (const id of ['playfield', 'cursor-lab']) {
   const container = document.getElementById(id);
   const canvas = container.querySelector('.cursor-canvas');
@@ -61,7 +61,7 @@ Promise.all([loadImage('assets/cursor.png?v=1.5'), loadImage('assets/cursortrail
     context.drawImage(trail, point.x - 20, point.y - 20, 40, 40);
    }
    context.globalAlpha = 1;
-   if (pointer) context.drawImage(cursor, pointer.x - 40, pointer.y - 40, 80, 80);
+   if (pointer) context.drawImage(cursor, pointer.x - 54, pointer.y - 54, 108, 108);
    if (pointer || points.length) frame = requestAnimationFrame(render);
    else container.classList.remove('pointer-active');
   }
