@@ -1,3 +1,9 @@
+## Animation du slider
+
+- Effet limité à la balle mobile du slider.
+- Orientation selon la tangente native, y compris aux virages.
+- 32 images de pulsation, cadence gérée par le moteur selon la vitesse du slider.
+
 ## Ajustement sliders et typographie
 
 - Ancienne traînée violette restaurée.

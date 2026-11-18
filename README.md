@@ -8,3 +8,5 @@ Cercles et sliders à contours blancs, prismes multicolores, curseur rond lumine
 
 Éléments redessinés depuis une capture fournie par AzuRT. Le fond de jeu dépend de la beatmap. Les ornements sont une interprétation, les fichiers du skin original ne sont pas fournis. Le pack a été vérifié techniquement et reste à essayer dans le client.
 
+
+Les ailes sont exclusivement intégrées aux images de la balle mobile du slider. Le moteur gère leur apparition pendant le slider et leur rotation suivant sa trajectoire. Les 32 images donnent une pulsation légère, dont la cadence native dépend de la vitesse du slider dans lazer. La vitrine montre une simulation.

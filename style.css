@@ -25,3 +25,7 @@
 .demo-slider>.slider-effect{height:200%;width:auto;left:0;top:50%;opacity:0;pointer-events:none;transform:translate(-25%,-50%) scale(.65);transition:opacity 60ms,transform 180ms}
 .demo-slider.is-held>.slider-effect{opacity:1;transform:translate(-25%,-50%) scale(1)}
 @media(prefers-reduced-motion:reduce){.demo-slider>.slider-effect{transition:none}}
+
+.demo-slider.is-held>.slider-effect{animation:slider-wing-pulse .54s ease-in-out infinite}
+@keyframes slider-wing-pulse{from,to{transform:translate(-25%,-50%) scale(.96);opacity:.82}50%{transform:translate(-25%,-50%) scale(1.02);opacity:1}}
+@media(prefers-reduced-motion:reduce){.demo-slider.is-held>.slider-effect{animation:none}}
