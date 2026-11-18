@@ -41,7 +41,7 @@ Promise.all([loadImage('assets/cursor.png'),loadImage('assets/cursortrail.png')]
    if(pointer&&trailMode==='points'&&time-previousTime>=1000/60){points.push({...pointer,time});previousTime=time}
    if(!reducedMotion.matches){ctx.globalCompositeOperation='source-over';for(const p of points){const life=1-(time-p.time)/duration;ctx.globalAlpha=Math.max(0,life);ctx.drawImage(trail,p.x-28,p.y-28,56,56)}}
    ctx.globalCompositeOperation='source-over';ctx.globalAlpha=1;
-   if(pointer){const size=container.id==='cursor-lab'?96:72;ctx.drawImage(cursor,pointer.x-size/2,pointer.y-size/2,size,size)}
+   if(pointer){const size=container.id==='cursor-lab'?108:81;ctx.drawImage(cursor,pointer.x-size/2,pointer.y-size/2,size,size)}
    if(pointer||points.length){requestAnimationFrame(render)}else{running=false;container.classList.remove('pointer-active')}
   }
   container.addEventListener('pointermove',event=>{if(event.pointerType==='touch')return;const bounds=container.getBoundingClientRect();const next={x:event.clientX-bounds.left,y:event.clientY-bounds.top};if(trailMode==='persistent'&&pointer){const dx=next.x-pointer.x,dy=next.y-pointer.y,dist=Math.hypot(dx,dy),steps=Math.floor(dist/(56/2.5));for(let j=1;j<=steps;j++)points.push({x:pointer.x+dx*j/(steps+1),y:pointer.y+dy*j/(steps+1),time:performance.now()})}pointer=next;container.classList.add('pointer-active');if(!running){running=true;requestAnimationFrame(render)}});

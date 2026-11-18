@@ -1,3 +1,12 @@
+# V1.3 Glow
+
+- Curseur en petite boule lisse nacrée lavande, cœur légèrement agrandi et fin bord lumineux.
+- Halo court dépassant légèrement de la boule ; transparence et centrage conservés.
+- PNG SD 108×108 et HD 216×216 ; taille stable au clic.
+- Skin complet, pack curseur seul, sources et aperçu avant/après.
+- 99 sons, mania, traînée et autres fichiers du skin préservés.
+- Archives et dimensions vérifiées ; gameplay non testé en client.
+
 # V1.2
 
 - Derniers ajouts regroupés : halo violet 96 px, traînée 56 px, cercles contrastés, HUD compact animé.

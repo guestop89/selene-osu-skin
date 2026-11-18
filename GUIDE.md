@@ -1,3 +1,19 @@
+# SELENE V1.3 Glow
+
+Importer `SELENE-V1.3-Glow.osk`, puis choisir **SELENE V1.3 Glow** dans osu!.
+
+Le curseur devient une boule lisse nacrée lavande, avec un bord lumineux et un halo court. Les PNG transparents mesurent 108 px et 216 px (@2x), contre 96 et 192 auparavant. La taille du fichier inclut les marges transparentes ; le centre visible est légèrement agrandi.
+
+Pour remplacer uniquement le curseur, extraire `SELENE-V1.3-curseur.zip` dans le dossier de votre skin après sauvegarde des deux fichiers existants. Conserver `CursorCentre: 1`, `CursorExpand: 0` et `CursorRotate: 0`.
+
+Le reste du skin, notamment les 99 sons, les ressources mania et la traînée courte, est identique octet par octet à la V1.2. Les seuls fichiers modifiés dans le .osk sont `cursor.png`, `cursor@2x.png` et le nom/commentaire de version dans `skin.ini`. Aucun test en client osu! effectué.
+
+Curseur créé avec l’outil image_gen intégré, redimensionné et centré avec ImageMagick. Sources et script de reconstruction dans `SELENE-V1.3-Glow-sources.zip`.
+
+---
+
+## Guide historique V1.2
+
 # SELENE V1.2 Realease
 
 Version complète par AzuRT, issue du dernier pack personnalisé. Importer le .osk,
