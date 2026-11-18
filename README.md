@@ -1,61 +1,47 @@
-<p align="center"><img src="favicon.svg" width="58" alt="SELENE"></p>
-<h1 align="center">SELENE V1.3 Glow</h1>
-<p align="center">La nuit, en rythme.<br>Un skin osu! rose et violet, personnalisé pour <a href="https://osu.ppy.sh/users/38408224">AzuRT</a>.</p>
-<p align="center"><a href="https://guestop89.github.io/selene-osu-skin/">Découvrir la vitrine</a> · <a href="https://github.com/guestop89/selene-osu-skin/raw/refs/heads/main/downloads/SELENE-V1.3-Glow.osk">Télécharger la V1.3</a> · <a href="GUIDE.md">Guide du skin</a></p>
+<p align="center"><img src="favicon.svg" width="48" alt="SELENE"></p>
+<h1 align="center">SELENE 2.0</h1>
+<p align="center">La nuit, en rythme. Un skin osu! personnalisé pour AzuRT.</p>
+<p align="center"><a href="https://guestop89.github.io/selene-osu-skin/">Découvrir la vitrine</a> · <a href="https://github.com/guestop89/selene-osu-skin/raw/refs/heads/main/downloads/SELENE-V2.0.osk">Télécharger le skin</a> · <a href="downloads/SELENE-V2.0-complet.zip">Pack complet</a></p>
 
-![Vue d’ensemble de la V1.2, hors nouveau curseur](assets/overview.jpg)
+![Aperçu général de SELENE 2.0](assets/v2-overview.jpg)
 
-[Pack complet avec options](downloads/SELENE-V1.3-complet.zip) · [Nouveautés V1.3](CHANGES.md)
+## Une nouvelle identité
 
-## Nouveau dans la V1.3
+- Anneaux blancs et centres sombres translucides.
+- Prismes cyan, lavande, rose et or, légèrement agrandis.
+- Curseur rond nacré et traînée violette courte.
+- Ailes blanches de slider, animées et orientées suivant la trajectoire. Le prisme central garde son orientation.
+- Signature AzuRT calligraphique au-dessus de la barre de vie lavande.
+- Combo en Google Sans, environ 20 % plus petit, avec son rebond natif.
 
-- Boule nacrée lavande entourée d’une aura diffuse rose et violette. Une traînée douce prolonge la lumière en mouvement.
-- PNG transparents de 108 px et 216 px (@2x), centrés ; taille stable au clic.
-- [Curseur et traînée](downloads/SELENE-V1.3-curseur.zip) pour une installation manuelle.
+![Signature AzuRT et barre de vie](assets/v2-hud.png)
 
-![Avant / après du curseur](assets/cursor-comparison.png)
+## En mouvement
 
-## Hérité de la V1.2
+![Simulation du slider avec prisme fixe](assets/v2-slider.gif)
 
-- Ronds à bord blanc, centres transparents teintés de rose, lavande et orchidée ; grands chiffres arrondis.
-- Traînée courte de 56 px avec le fondu natif de la V1.2 et une nouvelle texture lumineuse.
-- Barre de vie rose/violet animée à 60 i/s, avec un bloc relié réunissant Sélène, le drapeau français, AzuRT et son avatar osu!.
-- Combo réel avec chiffres blancs, suffixe « Combo » violet et rebond natif du client.
-- `:3` vert pour 100, bleu pour 50, petite croix pour miss ; 42 frames de rebond et de fondu. Parfaits invisibles.
-- Repères de sliders plus nets, points de liaison discrets, touches moins opaques et boutons de pause plus lisibles.
-- 99 fichiers audio préservés ; ressources propres à mania conservées.
+Les 32 images des ailes utilisent la cadence native de la balle de slider, liée à sa vitesse dans lazer. Les aperçus sont composés à partir des fichiers du skin et l’animation est une simulation hors jeu.
 
-Aperçu historique de la traînée V1.2 (ancien curseur) :
+![Prismes multicolores](assets/v2-prisms.png)
 
-![Simulation historique de la traînée courte](assets/motion.gif)
+![Curseur et traînée violette](assets/v2-cursor.png)
 
 ## Installer
 
-1. Télécharger [SELENE V1.3 Glow.osk](https://github.com/guestop89/selene-osu-skin/raw/refs/heads/main/downloads/SELENE-V1.3-Glow.osk).
-2. Ouvrir le fichier ou le glisser dans osu!, puis attendre l’import.
-3. Choisir **SELENE V1.3 Glow** dans les options de skin.
+1. Télécharger [SELENE V2.0.osk](downloads/SELENE-V2.0.osk).
+2. Ouvrir le fichier dans osu!, puis attendre son import.
+3. Sélectionner **SELENE V2.0** dans les options de skin.
 
-Chaque `.osk` est complet ; aucune ancienne version n’est requise. La traînée courte est directement incluse. Les [sources modifiables](sources/SELENE-V1.3-Glow-sources.zip) sont facultatives.
+Le [pack complet](downloads/SELENE-V2.0-complet.zip) contient le skin, les aperçus, le guide et les sources de reconstruction. Les [sources](sources/SELENE-V2.0-sources.zip) sont aussi disponibles séparément. Les empreintes des téléchargements figurent dans [SHA256SUMS.txt](downloads/SHA256SUMS.txt).
 
-## Première édition
+## Compatibilité
 
-La première version **SELENE — Ribbon Edition** est également conservée : [télécharger l’originale](downloads/SELENE-Ribbon.osk) · [aperçu](assets/ribbon.jpg) · [sources](sources/SELENE-Ribbon-sources.zip).
+Format legacy pour osu!stable et osu!lazer. Les menus visent surtout stable et le HUD personnalisé concerne lazer. Les tailles du curseur et du HUD dépendent des réglages du client. Le fond et les objets joués dépendent de la beatmap.
 
-## Compatibilité et limites
+L’intégrité de l’archive, les PNG SD/HD, la conservation des 99 sons et des ressources mania, les animations et les liens ont été vérifiés. L’import et le gameplay dans un client osu! restent à confirmer. Voir le [guide](GUIDE.md) et les [notes de version](CHANGES.md).
 
-Format legacy pour osu!stable et osu!lazer. Les menus visent surtout stable ; le HUD personnalisé, l’accuracy et le compteur de pp concernent lazer. Le `.osk` seul ne calcule pas les pp dans stable et ne peut pas rendre le combo jaune automatiquement tous les 100.
+## Crédits et versions précédentes
 
-La vitrine utilise les vrais assets dans des compositions et simulations hors jeu ; les valeurs affichées sont illustratives. Les fichiers ont été contrôlés techniquement. Aucun test d’import ou de gameplay en client n’a encore été réalisé. Les réglages de taille, sensibilité et mania restent personnels. Voir le [guide complet](GUIDE.md).
+Personnalisation pour AzuRT. Ornements retravaillés depuis une référence fournie avec image_gen, puis intégrés et animés dans les ressources du skin. Les motifs constituent une interprétation de la référence. Signature en Z003 et combo en Google Sans, rasterisés en PNG. Aucun fichier de police n’est redistribué. Les contenus tiers conservent leurs crédits respectifs. Pas d’affiliation officielle avec osu!.
 
-## La vitrine
-
-HTML, CSS et JavaScript sans dépendance, sans suivi et sans service externe. Démonstration interactive des ronds, préécoute des trois familles de clics, curseur à traînée courte, vraies frames de vie et galerie agrandie. Les sons ne démarrent qu’après une action.
-
-Pour prévisualiser, servir la racine avec un serveur HTTP statique. GitHub Pages doit servir la branche `main`, dossier `/ (root)`. Le fichier `.nojekyll` désactive le traitement Jekyll.
-
-## Crédits
-
-Design original personnalisé pour AzuRT Références de direction artistique : Mizuki / Sleepy / Aristia et Sorasaki Hina, sans reprise de leurs fichiers. Avatar issu du profil osu! fourni par AzuRT. Glyphes Windows rasterisés en PNG ; aucun fichier de fonte Windows redistribué. Images et sons synthétisés dans les sources jointes. Pas d’affiliation officielle avec osu!.
-
-Les images et les sons du skin ainsi que l’avatar ont leurs crédits respectifs ; aucune licence globale n’est attribuée à des contenus tiers.
-
+[SELENE V1.3 Glow](downloads/SELENE-V1.3-Glow.osk) · [Ribbon Edition](downloads/SELENE-Ribbon.osk)

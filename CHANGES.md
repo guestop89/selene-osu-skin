@@ -1,21 +1,19 @@
-# V1.3 Glow
+# SELENE 2.0
 
-- Curseur en petite boule lisse nacrée lavande, cœur légèrement agrandi et fin bord lumineux.
-- Aura diffuse rose et violette et traînée courte plus douce. La vitrine fait glisser la lumière derrière le cœur lors des déplacements.
-- PNG SD 108×108 et HD 216×216 ; taille stable au clic.
-- Skin complet, pack curseur seul, sources et aperçu avant/après.
-- 99 sons et ressources mania préservés.
-- Archives et dimensions vérifiées ; gameplay non testé en client.
+Une nouvelle édition complète de SELENE pour AzuRT.
 
-# V1.2
+- Cercles et têtes de sliders à anneaux blancs, fond sombre translucide et prisme multicolore.
+- Curseur rond nacré et retour de la traînée violette courte.
+- Ailes blanches courbes sur la balle active des sliders.
+- Orientation des ailes selon la trajectoire, avec 32 images de pulsation.
+- Prisme de slider sur une couche indépendante, sans rotation.
+- Signature AzuRT en Z003, rapprochée de la barre de vie lavande.
+- Combo en Google Sans, environ 20 % plus petit, avec son animation native.
+- Cinq aperçus, dont une animation, une galerie et un pack complet.
+- Guide, sources de reconstruction et sommes de contrôle actualisés.
 
-- Derniers ajouts regroupés : halo violet 96 px, traînée 56 px, cercles contrastés, HUD compact animé.
-- Repères de sliders et de suivi affinés ; points de liaison et compteur d'entrées plus discrets.
-- Boutons de pause plus lisibles et mieux hiérarchisés.
-- 99 sons et ressources mania conservés.
-- Traînée courte par défaut : points discontinus, fondu natif 150 ms dans lazer.
-- Guide, aperçu, téléchargements et vitrine synchronisés.
-- Crédits publics actualisés pour AzuRT.
+Vérification des archives, des PNG SD/HD, de la conservation des sons et de mania et des liens. Import et gameplay dans un client osu! à confirmer.
 
-Dernier ajustement V1.2 : remplacement de la traînée longue par des points natifs courts (150 ms dans lazer, contre 500 ms auparavant), sans changement du curseur ni des autres éléments.
+## Archives
 
+Les éditions V1.3 Glow et Ribbon restent accessibles dans le dépôt.
