@@ -10,3 +10,5 @@ Cercles et sliders à contours blancs, prismes multicolores, curseur rond lumine
 
 
 Les ailes sont exclusivement intégrées aux images de la balle mobile du slider. Le moteur gère leur apparition pendant le slider et leur rotation suivant sa trajectoire. Les 32 images donnent une pulsation légère, dont la cadence native dépend de la vitesse du slider dans lazer. La vitrine montre une simulation.
+
+Le prisme central utilise la couche native sliderb-spec, dont la rotation est annulée par le moteur. Les ailes restent sur la couche animée orientée selon la trajectoire.

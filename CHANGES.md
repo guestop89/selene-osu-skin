@@ -1,3 +1,8 @@
+## Prisme fixe
+
+- Prisme central séparé des ailes sur la couche native non rotative.
+- Rotation et pulsation des ailes conservées.
+
 ## Animation du slider
 
 - Effet limité à la balle mobile du slider.
