@@ -1,3 +1,7 @@
+## Ajustement du suivi et de la typographie
+
+La traînée violette du curseur de la V1.3 est restaurée. Sur un slider suivi, les ailes blanches sont portées par la balle mobile, qui pivote nativement selon la tangente de la trajectoire. Le cercle de suivi conserve sa pulsation à l’appui et aux ticks. AzuRT est en Google Sans et rapproché de la ligne de vie. Les chiffres du combo sont en Google Sans, réduits d’environ 20 % en pixels, avec leur animation native.
+
 # SELENE V1.5 Reference
 
 Cercles blancs, prismes multicolores légèrement agrandis, curseur rond et AzuRT au-dessus de la barre de vie. Les éléments visibles sont redessinés depuis la capture fournie. Le fond anime et la disposition des objets dépendent de la beatmap. Les fichiers du skin original ne sont pas inclus.

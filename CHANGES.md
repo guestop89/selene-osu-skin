@@ -1,3 +1,10 @@
+## Ajustement sliders et typographie
+
+- Ancienne traînée violette restaurée.
+- Ailes blanches courbes sur la balle mobile, orientées dans le sens du slider.
+- AzuRT rapproché de la barre, police Google Sans.
+- Combo en Google Sans, réduit de 20 %, animation native conservée.
+
 ## Ajustement V1.5
 
 - Curseur rond lumineux restauré.

@@ -15,7 +15,7 @@ fetch('assets/waveform.json').then(r=>{if(!r.ok)throw Error();return r.json()}).
 let comboCount=438,comboAtlas;
 const comboCanvas=document.getElementById('combo');
 function drawCombo(){if(!comboAtlas)return;comboCanvas.width=Math.max(500,String(comboCount).length*64+266);const ctx=comboCanvas.getContext('2d');ctx.clearRect(0,0,comboCanvas.width,100);let x=0;for(const d of String(comboCount)){ctx.drawImage(comboAtlas,Number(d)*66,0,66,100,x,0,66,100);x+=64}ctx.drawImage(comboAtlas,660,0,266,100,x,0,266,100);comboCanvas.setAttribute('aria-label',`${comboCount} Combo, valeur illustrative`)}
-loadImage('assets/combo-atlas.png').then(im=>{comboAtlas=im;drawCombo()}).catch(()=>{});
+loadImage('assets/combo-atlas.png?v=1.5c').then(im=>{comboAtlas=im;drawCombo()}).catch(()=>{});
 Promise.all([loadImage('assets/hitcircle.png?v=1.5'),loadImage('assets/hitcircleoverlay.png?v=1.5b')]).then(([base,overlay])=>{document.querySelectorAll('.note-art').forEach(canvas=>{const color=colors[Number(canvas.parentElement.dataset.color)];const ctx=canvas.getContext('2d');ctx.drawImage(base,0,0,256,256);const pixels=ctx.getImageData(0,0,256,256);for(let i=0;i<pixels.data.length;i+=4){for(let c=0;c<3;c++)pixels.data[i+c]=Math.round(pixels.data[i+c]*color[c]/255)}ctx.putImageData(pixels,0,0);ctx.drawImage(overlay,0,0,256,256)})}).catch(()=>toast('Certains aperçus n’ont pas pu être chargés. Rechargez la page.'));
 let hitCount=0;
 document.querySelectorAll('.hitobject').forEach(button=>button.addEventListener('click',()=>{playSound('normal-hitnormal');comboCount++;hitCount++;drawCombo();const counter=document.querySelector('.demo-combo');counter.classList.remove('combo-bounce');void counter.offsetWidth;counter.classList.add('combo-bounce');button.classList.remove('hit');void button.offsetWidth;button.classList.add('hit');const judge=document.createElement('span');judge.className=`judgement ${hitCount%4===0?'blue':'green'}`;judge.style.left=button.offsetLeft+'px';judge.style.top=button.offsetTop+'px';judge.setAttribute('aria-hidden','true');button.parentElement.appendChild(judge);setTimeout(()=>judge.remove(),720)}));
@@ -41,7 +41,7 @@ function drawHealth(time) {
 document.addEventListener('visibilitychange',()=>{cancelAnimationFrame(healthRequest);if(!document.hidden)drawHealth(performance.now())});
 reducedMotion.addEventListener('change',()=>{cancelAnimationFrame(healthRequest);lastHealth=-1;drawHealth(performance.now())});
 
-Promise.all([loadImage('assets/cursor.png?v=1.5b'), loadImage('assets/cursortrail.png?v=1.5')]).then(([cursor, trail]) => {
+Promise.all([loadImage('assets/cursor.png?v=1.5b'), loadImage('assets/cursortrail.png?v=1.5c')]).then(([cursor, trail]) => {
  for (const id of ['playfield', 'cursor-lab']) {
   const container = document.getElementById(id);
   const canvas = container.querySelector('.cursor-canvas');
@@ -57,8 +57,8 @@ Promise.all([loadImage('assets/cursor.png?v=1.5b'), loadImage('assets/cursortrai
    points = reducedMotion.matches ? [] : points.filter(point => time - point.time < 150);
    if (pointer && !reducedMotion.matches) points.push({...pointer, time});
    for (const point of points) {
-    context.globalAlpha = (1 - (time - point.time) / 150) * .5;
-    context.drawImage(trail, point.x - 20, point.y - 20, 40, 40);
+    context.globalAlpha = (1 - (time - point.time) / 150);
+    context.drawImage(trail, point.x - 28, point.y - 28, 56, 56);
    }
    context.globalAlpha = 1;
    if (pointer) context.drawImage(cursor, pointer.x - 54, pointer.y - 54, 108, 108);
@@ -80,3 +80,26 @@ const dialog=document.getElementById('overview-dialog');
 for(const id of ['open-overview','overview-image'])document.getElementById(id).addEventListener('click',()=>dialog.showModal());
 document.getElementById('close-overview').addEventListener('click',()=>dialog.close());
 dialog.addEventListener('click',event=>{if(event.target===dialog){const box=dialog.getBoundingClientRect();if(event.clientX<box.left||event.clientX>box.right||event.clientY<box.top||event.clientY>box.bottom)dialog.close()}});
+
+// Mirror the held slider overlay in the interactive preview.
+const sliderPreview = document.querySelector('.demo-slider');
+function releaseSliderPreview() {
+ sliderPreview.classList.remove('is-held');
+}
+sliderPreview.addEventListener('pointerdown', event => {
+ if (event.button !== 0) return;
+ sliderPreview.setPointerCapture(event.pointerId);
+ sliderPreview.classList.add('is-held');
+ playSound('normal-hitnormal');
+});
+sliderPreview.addEventListener('pointerup', releaseSliderPreview);
+sliderPreview.addEventListener('pointercancel', releaseSliderPreview);
+sliderPreview.addEventListener('lostpointercapture', releaseSliderPreview);
+sliderPreview.addEventListener('keydown', event => {
+ if (event.key === ' ' || event.key === 'Enter') {
+  event.preventDefault();
+  sliderPreview.classList.add('is-held');
+ }
+});
+sliderPreview.addEventListener('keyup', releaseSliderPreview);
+sliderPreview.addEventListener('blur', releaseSliderPreview);
